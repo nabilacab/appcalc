@@ -1,0 +1,361 @@
+ا<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculatrice</title>
+    <style>
+        .divh1box{
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .parent{
+            width: 300px;
+            
+            
+            
+        }
+        .header{
+            width: 300px;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .btn{
+            width: 65px;
+            height: 65px;
+            margin: auto;
+            border-radius: 50%;
+            text-align: center;
+            background-color: rgb(223, 238, 238);;
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            overflow: hidden;
+            border: 1px solid white;
+            box-shadow: 3px 4px 3px black;
+            margin: 5px;
+        }
+        .btn:hover{
+            background-color: rgb(134, 146, 140) ;
+        }
+        .inp{
+            width: 90%;
+            height: 40px;
+            margin: 15px;
+            box-shadow: 2px 3px 2px 3px  black;
+            font-size: 30px;
+            font-weight: bold;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: rgb(223, 238, 238);
+            border: none !important;
+        }
+        .inp:focus{
+            border: none !important;
+        }
+        
+        .btn-egal{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(223, 238, 238);
+            border-radius: 25px;
+            margin: 10px ;
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            border: 1px solid white;
+            box-shadow: 3px 4px 3px black;
+        }
+        .btn-egal:hover{
+            background-color: rgb(134, 146, 140) !important;
+        }
+        body{
+           background-image: url(imgsnow.jpg);
+           background-position: center;
+           background-size: cover;
+            position: relative;
+            
+           
+        }
+        .divscie{
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btnscience{
+            width: 100px;
+            height: 40px;
+            background-color: rgb(223, 238, 238);
+            box-shadow: 3px 4px 3px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            border-radius: 10px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .btnscience:hover{
+            background-color: rgb(180, 168, 168);
+        }
+        .container{
+            width: 300px;
+            height: auto;
+            background-color: rgb(223, 238, 238);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 5px 3px 6px 6px rgb(8, 8, 8);
+            
+            
+        }
+        .test:hover{
+         background-color: rgb(134, 146, 140) !important;
+        }
+        
+        /*section */ 
+        .sectscience{
+            width: 300px;
+            height: auto;
+            background-color: rgb(223, 238, 238);
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%,-50%);
+            display: flex;
+            justify-content: center;
+            display: none;
+            padding: 15px;
+            border-radius: 15px;
+            transition: 2s;
+            box-shadow: 15px 21px 11px rgb(8 8 8);
+        }
+        @keyframes changerotatescale {
+            0%{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+                
+            }
+            100%{
+            position: absolute;
+            left: 400px;
+            top: 200px;
+            }
+        }
+        .boxparent{
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .box2btns{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 15px;
+            
+        }
+        .inp:focus{
+            border: none;
+        }
+        .btnstylebox{
+            width: 55px;
+            height: 55px;
+            font-size: 20px;
+        }
+        .btnstylebox-egal{
+            width: 55px;
+            height: 55px;
+            
+            width: 55px;
+            height: 55px;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    
+    <div class="container">
+    <div class="parent">
+       <div class="divh1box">
+        <h1>calculatrice</h1>
+       </div>
+        <div class="divscie twostyle-divscie">
+            <button class="btnscience" onclick="btnscshow()" id="btnstandar">scientifique</button>
+            <button class="btnscience" onclick="standardbtn()">standard</button>
+        </div>
+        
+        <input placeholder="calc" type="text" class="inp" id="boxcalc">
+        
+    </div>
+    <div class="header">
+        <button class="btn" onclick="upload('1')" id="num1">1</button>
+        <button class="btn" onclick="upload('2')">2</button>
+        <button class="btn" onclick="upload('3')">3</button>
+        <button class="btn test" style="background-color: rgb(223, 238, 238);" onclick="upload('+')">+</button>
+        <button class="btn" onclick="upload('4')">4</button>
+        <button class="btn" onclick="upload('5')">5</button>
+        <button class="btn" onclick="upload('6')">6</button>
+        <button class="btn test" style="background-color: rgb(223, 238, 238);" onclick="upload('-')">-</button>
+        <button class="btn" onclick="upload('7')">7</button>
+        <button class="btn" onclick="upload('8')">8</button>
+        <button class="btn" onclick="upload('9')">9</button>
+        <button class="btn test" style="background-color: rgb(223, 238, 238);" onclick="upload('*')">x</button>
+        <button class="btn test" style="background-color: rgb(223, 238, 238);" onclick="del1()">c</button>
+        <button class="btn" onclick="upload('0')">0</button>
+        <button class="btn test" style="background-color: rgb(223, 238, 238);" onclick="upload('.')">.</button>
+        <button class="btn test" style="background-color: rgb(223, 238, 238);" onclick="upload('/')">÷</button>
+        <button class="btn-egal" onclick="del()">del</button>
+        <button class="btn-egal" onclick="equal()">=</button>
+    </div>
+    
+</div>
+<section class="sectscience" id="showsciencecalc">
+  
+    
+    <div class="box2btns">
+        
+        <button class="btn btnstylebox test" style="background-color: rgb(223, 238, 238);" onclick="del1()">c</button>
+        <button class="btn btnstylebox" onclick="cos()" id="num1">cos</button>
+        <button class="btn btnstylebox" onclick="sin()">sin</button>
+        <button class="btn btnstylebox" onclick="tan()">tan</button>
+        <button class="btn btnstylebox" onclick="abs()">|x|</button>
+        <button class="btn btnstylebox" onclick="ln()">1/x</button>
+        <button class="btn btnstylebox test" style="background-color: rgb(223, 238, 238);" onclick="pow()">x²</button>
+        <button class="btn btnstylebox" onclick="sqrtdbl()">²√x</button>
+        <button class="btn btnstylebox" onclick="sqrt()">√</button>
+        <button class="btn btnstylebox" onclick="rightthere('(')">(</button>
+        <button class="btn btnstylebox" onclick="rightthere(')')">)</button>
+        <button class="btn btnstylebox test" style="background-color: rgb(223, 238, 238);" onclick="upload('/')">÷</button>
+        <button class="btn btnstylebox" onclick="upload('7')">7</button>
+        <button class="btn btnstylebox" onclick="upload('8')">8</button>
+        <button class="btn btnstylebox" onclick="upload('9')">9</button>
+        <button class="btn btnstylebox test" style="background-color: rgb(223, 238, 238);" onclick="upload('*')">x</button>
+        <button class="btn btnstylebox" onclick="upload('4')">4</button>
+        <button class="btn btnstylebox" onclick="upload('5')">5</button>
+        <button class="btn btnstylebox" onclick="upload('6')">6</button>
+        <button class="btn btnstylebox test" style="background-color: rgb(223, 238, 238);" onclick="upload('-')">-</button>
+        <button class="btn btnstylebox" onclick="upload('1')">1</button>
+        <button class="btn btnstylebox" onclick="upload('2')">2</button>
+        <button class="btn btnstylebox" onclick="upload('3')" id="num1">3</button>
+        <button class="btn btnstylebox test" style="background-color: rgb(223, 238, 238);" onclick="upload('+')">+</button>
+        
+        <button class="btn btnstylebox test" style="background-color: rgb(223, 238, 238);" onclick="upload('.')">.</button>
+        <button class="btn btnstylebox" onclick="upload('0')">0</button>
+        <button class="btn btnstylebox-egal" onclick="del()">del</button>
+        <button class="btn btnstylebox-egal" onclick="equal()">=</button>
+        
+    </div>
+</section>
+<script>
+function upload(num){
+var boxcalc = document.getElementById("boxcalc");
+boxcalc.value += num;
+}
+function equal(){
+    try{
+        boxcalc.value = eval(boxcalc.value);
+        
+    }
+    catch(err){
+        alert("invalid value");
+    }
+
+}
+function del1(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = "";
+}
+function cos(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = Math.cos(boxcalc.value);
+}
+function sin(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = Math.sin(boxcalc.value);
+}
+function tan(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = Math.tan(boxcalc.value);
+}
+function pow(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = Math.pow(boxcalc.value,2);
+}
+function rightthere(num){
+    var boxcalc = document.getElementById("boxcalc");
+        boxcalc.value +=num;
+}
+function sqrt(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = Math.sqrt(boxcalc.value);
+}
+function log(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = Math.log(boxcalc.value);
+}
+function ln(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = 1/boxcalc.value;
+}
+function abs(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = Math.abs(boxcalc.value);
+}
+
+function pi(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = '3,14159265358979';
+}
+function del(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = boxcalc.value.slice(0,-1);
+}
+function dbl(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value += "00";
+}
+function sqrtdbl(){
+    var boxcalc = document.getElementById("boxcalc");
+    boxcalc.value = Math.pow(Math.sqrt(boxcalc.value),2);
+}
+function btnscshow(){
+    var showsciencecalc = document.getElementById("showsciencecalc").style.display="block";
+   var showsciencecalc = document.getElementById("showsciencecalc").style.position="absolute";
+   var showsciencecalc = document.getElementById("showsciencecalc").style.left="50%";
+   var showsciencecalc = document.getElementById("showsciencecalc").style.top="64%";
+   var showsciencecalc = document.getElementById("showsciencecalc").style.transform="translate(-50%,-50%)";
+   var showsciencecalc = document.getElementById("showsciencecalc").style.transition="2s";
+   
+}
+function standardbtn(){
+    var showsciencecalc = document.getElementById("showsciencecalc").style.display="none";
+}
+
+
+</script>
+</body>
+</html>
